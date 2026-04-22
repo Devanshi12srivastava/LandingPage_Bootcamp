@@ -39,7 +39,8 @@ cd project-name
 ### 2. Install dependencies
 npm install
 
-### 3. Run locally
+### 3. Add env
+### 4. Run locally
 
 
 npm run dev
