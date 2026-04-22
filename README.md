@@ -3,7 +3,8 @@
 ## 📌 Overview
 
 This project is a responsive landing page built using React. It includes a fully functional form integrated with Firebase Firestore to store user data in real-time.
-
+## live :
+https://landing-page-bootcamp.vercel.app/
 
 
 ## 🛠️ Tech Stack
