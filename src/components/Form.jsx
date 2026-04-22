@@ -18,7 +18,7 @@ export default function Form() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("console",import.meta.env);
+    
     const { name, phone, email, college } = form;
     if (!name || !phone || !email || !college) {
       alert("Please fill all fields");
