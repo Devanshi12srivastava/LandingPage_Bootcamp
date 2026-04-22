@@ -15,8 +15,8 @@ export default function Demo() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ amount: 0.3 }}
-            className="bg-white shadow-xl p-3 rounded-2xl hover:scale-105 transition duration-300"
-          >
+            className="bg-white shadow-xl p-3 rounded-2xl hover:scale-105 transition duration-300">
+          
             <h3 className="text-xl font-semibold text-blue-600">
               22 April 2026
             </h3>
@@ -29,8 +29,8 @@ export default function Demo() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
             viewport={{ amount: 0.3 }}
-            className="bg-white shadow-xl rounded-2xl p-3 hover:scale-105 transition duration-300"
-          >
+            className="bg-white shadow-xl rounded-2xl p-3 hover:scale-105 transition duration-300">
+          
             <h3 className="text-xl font-semibold text-blue-600">
               23 April 2026
             </h3>
