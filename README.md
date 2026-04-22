@@ -32,7 +32,7 @@ This project is a responsive landing page built using React. It includes a fully
 ### 1. Clone the repository
 
 
-git clone https://github.com/your-username/project-name.git
+git clone https://github.com/Devanshi12srivastava/LandingPage_Bootcamp.git
 cd project-name
 
 
