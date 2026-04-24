@@ -1,1 +1,13 @@
 @import "tailwindcss";
+@keyframes scrollY {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollYReverse {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(50%); }
+}
+html {
+  scroll-behavior: smooth;
+}
