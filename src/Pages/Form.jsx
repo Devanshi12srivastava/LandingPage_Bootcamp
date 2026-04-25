@@ -18,73 +18,58 @@ export default function Form() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    const { name, phone, email, college } = form;
+  const { name, phone, email, college } = form;
 
-    if (!name || !phone || !email || !college) {
-      alert("Please fill all fields");
-      return;
-    }
+  if (!name || !phone || !email || !college) {
+    alert("Please fill all fields");
+    return;
+  }
 
-    if (!/^\S+@\S+\.\S+$/.test(email)) {
-      alert("Invalid Email");
-      return;
-    }
+  if (!/^\S+@\S+\.\S+$/.test(email)) {
+    alert("Invalid Email");
+    return;
+  }
 
-    if (!/^[6-9][0-9]{9}$/.test(phone)) {
-      alert("Invalid Phone Number");
-      return;
-    }
+  if (!/^[6-9][0-9]{9}$/.test(phone)) {
+    alert("Invalid Phone Number");
+    return;
+  }
 
-    try {
-      setLoading(true);
+  try {
+    setLoading(true);
 
-      const emailCheck = query(
-        collection(db, "bootcamp-form"),
-        where("email", "==", email),
-      );
+    await fetch("https://script.google.com/macros/s/AKfycbxZ0Elipo8gkQMKZSdNl3fuAGV2C41_F_IbXXPaKdZ1HcNCfNvdPXoWT-aGHvGKRiMX-Q/exec", { 
+      method: "POST",
+      mode: "no-cors", 
+      body: JSON.stringify({
+        name,
+        phone,
+        email,
+        college
+      }),
+    });
 
-      const emailSnap = await getDocs(emailCheck);
+    
 
-      if (!emailSnap.empty) {
-        alert("Email already exists");
-        setLoading(false);
-        return;
-      }
+    alert("Registered Successfully 🚀");
 
-      const phoneCheck = query(
-        collection(db, "bootcamp-form"),
-        where("phone", "==", phone),
-      );
+    setForm({
+      name: "",
+      phone: "",
+      email: "",
+      college: "",
+    });
 
-      const phoneSnap = await getDocs(phoneCheck);
+    setLoading(false);
 
-      if (!phoneSnap.empty) {
-        alert("Phone already exists");
-        setLoading(false);
-        return;
-      }
-
-      await addDoc(collection(db, "bootcamp-form"), form);
-
-      alert("Registered Successfully 🚀");
-
-      setForm({
-        name: "",
-        phone: "",
-        email: "",
-        college: "",
-      });
-
-      setLoading(false);
-    } catch (err) {
-      console.log(err);
-      alert("Error submitting form");
-      setLoading(false);
-    }
-  };
-
+  } catch (err) {
+    console.log(err);
+    alert("Error submitting form");
+    setLoading(false);
+  }
+};
   return (
     <section
       id="register"
